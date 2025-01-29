@@ -185,18 +185,15 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
-    debug.egl.hw=0 \
-    debug.mdpcomp.logs=0 \
-    debug.sf.hw=0 \
-    debug.sf.auto_latch_unsignaled=0 \
+    debug.sf.latch_unsignaled=1 \
+    debug.sf.frame_rate_multiple_threshold=60 \
+    debug.sf.enable_adpf_cpu_hint=true \
     persist.demo.hdmirotationlock=false \
     persist.sys.sf.color_saturation=1.0 \
     persist.sys.sf.native_mode=1 \
+    debug.sf.enable_gl_backpressure=0 \
     persist.sys.sf.force_brightness_capability=1 \
     debug.sf.disable_client_composition_cache=1 \
-    debug.sf.enable_adpf_cpu_hint=true \
-    debug.sf.enable_gl_backpressure=0 \
-    debug.sf.latch_unsignaled=1 \
     ro.opengles.version=196610 \
     ro.gfx.driver.1=com.qualcomm.qti.gpudrivers.sm6150.api30 \
     vendor.display.enable_default_color_mode=1 \
@@ -237,8 +234,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     av.offload.enable=true \
     ro.media.recorder-max-base-layer-fps=60 \
-    vendor.swvdec.log.level=1 \
-    vendor.vidc.debug.level=1
+    vendor.swvdec.log.level=0 \
+    vendor.vidc.debug.level=0
 
 PRODUCT_PRODUCT_PROPERTIES += \
     media.stagefright.thumbnail.prefer_hw_codecs=true
@@ -335,10 +332,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 
 # Sensor
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.vendor.sensors.mot_ltv=true \
-    persist.vendor.sensors.enable.mag_filter=true \
-    persist.vendor.sensors.hal_trigger_ssr=true \
-    persist.vendor.sensors.odl.adsp=true
+    persist.vendor.sensors.enable.mag_filter=true
 
 # Time
 PRODUCT_PROPERTY_OVERRIDES += \

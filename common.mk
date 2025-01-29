@@ -247,10 +247,10 @@ WITH_DEXPREOPT_DEBUG_INFO := false
 # Do not generate libartd.
 PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
 
-# Strip the local variable table and the local variable type table to reduce
-# the size of the system image. This has no bearing on stack traces, but will
-# leave less information available via JDWP.
+# Java Optimizations
 PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
+SYSTEM_OPTIMIZE_JAVA := true
+SYSTEMUI_OPTIMIZE_JAVA := true
 
 # Mobile data
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -261,6 +261,9 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
     Launcher3QuickStep \
     SystemUI \
     Settings
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.systemuicompilerfilter=speed
 
 # DebugFS
 PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
@@ -491,6 +494,10 @@ PRODUCT_PACKAGES += \
 # Servicetracker
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.servicetracker@1.2.vendor
+
+# Vulkan
+PRODUCT_PACKAGES += \
+    libvulkan
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \

@@ -25,7 +25,7 @@ VENDOR_PATH := device/motorola/sm6150-common
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-2a-dotprod
 TARGET_CPU_ABI := arm64-v8a
-TARGET_CPU_VARIANT := cortex-a55
+TARGET_CPU_VARIANT := cortex-a76
 
 TARGET_2ND_ARCH := arm
 TARGET_2ND_ARCH_VARIANT := armv8-2a
@@ -33,8 +33,9 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a55
 
-ENABLE_CPUSETS := true
-ENABLE_SCHEDBOOST := true
+# Dex2oat
+DEX2OAT_TARGET_CPU_VARIANT := cortex-a76
+DEX2OAT_TARGET_CPU_VARIANT_RUNTIME := cortex-a76
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := sm6150
@@ -54,6 +55,13 @@ TARGET_KERNEL_SOURCE := kernel/motorola/sm6150
 TARGET_KERNEL_ADDITIONAL_FLAGS := \
     LLVM=1 \
     LLVM_IAS=1
+
+# Neutron Clang
+TARGET_KERNEL_CLANG_COMPILE := true
+TARGET_KERNEL_CLANG_VERSION := neutron
+TARGET_KERNEL_CLANG_PATH := $(shell pwd)/prebuilts/clang/host/linux-x86/clang-neutron
+KERNEL_SUPPORTS_LLVM_TOOLS := true
+KERNEL_FULL_LLVM := true
 
 # Kernel modules - Audio
 TARGET_MODULE_ALIASES += \
