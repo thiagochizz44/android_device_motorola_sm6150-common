@@ -87,6 +87,10 @@ PRODUCT_ODM_PROPERTIES += \
     vendor.audio.feature.vbat.enable=true \
     vendor.audio.feature.wsa.enable=false
 
+# Blur
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    persist.sysui.disableBlur=false
+
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.bluetooth.a2dp_offload.disabled=false \
