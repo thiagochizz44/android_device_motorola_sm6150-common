@@ -19,6 +19,11 @@ arm64.memtag.process.system_server=off
 # Disable CPU vsync
 debug.cpurend.vsync=false
 
+# SkiaGL Threaded
+debug.renderengine.backend=skiaglthreaded
+debug.hwui.renderer=skiagl
+renderthread.skia.reduceopstasksplitting=true 
+
 # EGL
 ro.egl.blobcache.multifile=true
 ro.egl.blobcache.multifile_limit=33554432
