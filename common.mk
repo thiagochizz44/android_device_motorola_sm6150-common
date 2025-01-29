@@ -252,6 +252,12 @@ PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 SYSTEM_OPTIMIZE_JAVA := true
 SYSTEMUI_OPTIMIZE_JAVA := true
 
+# Speed profile services and wifi-service to reduce RAM and storage
+PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
+
+# Reduce SystemServer Debug
+PRODUCT_SYSTEM_SERVER_DEBUG_INFO := false
+
 # Mobile data
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.android.mobiledata=false
