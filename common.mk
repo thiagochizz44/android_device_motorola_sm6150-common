@@ -250,7 +250,6 @@ PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
 # Java Optimizations
 PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 SYSTEM_OPTIMIZE_JAVA := true
-SYSTEMUI_OPTIMIZE_JAVA := true
 
 # Speed profile services and wifi-service to reduce RAM and storage
 PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
@@ -267,9 +266,6 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
     Launcher3QuickStep \
     SystemUI \
     Settings
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.systemuicompilerfilter=speed
 
 # DebugFS
 PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
